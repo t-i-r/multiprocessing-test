@@ -11,11 +11,4 @@ repos:
     hooks:
     - id: black
       language_version: python3.7
--   repo: local
-    hooks:
-    -   id: tests
-        name: run tests
-        entry: pytest -v
-        language: system
-        types: [python]
 

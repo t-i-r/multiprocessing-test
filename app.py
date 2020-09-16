@@ -1,14 +1,14 @@
 import dash
-import dash_core_components as dcc
+
+# import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import dotenv
 from pathlib import Path
-import os
 
-from playhouse.pool import PooledPostgresqlDatabase
+from models import Person
 
-from models import *
+# from models import *
 
 import time
 from subprocess import Popen, PIPE
@@ -17,15 +17,6 @@ import multiprocessing
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
 dotenv.load_dotenv(dotenv_path=Path(Path.home(), "access", ".dotenv-postgres"))
-
-
-psql_db = PooledPostgresqlDatabase(
-    database="my_database",
-    host="localhost",
-    port=5432,
-    user=os.getenv("POSTGRES_USER"),
-    password=os.getenv("POSTGRES_PASSWORD"),
-)
 
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
@@ -70,7 +61,9 @@ def process_data(n_clicks):
     if n_clicks is None:
         return ""
 
-    p = multiprocessing.Process(target=slow_worker,)
+    p = multiprocessing.Process(
+        target=slow_worker,
+    )
     print("BEFORE:", p, p.is_alive())
     p.start()
     print("DURING:", p, p.is_alive())
