@@ -5,3 +5,5 @@
 - Simple dash app for testing of database connection that was opened in dash main app, can be used in a separate processs
 - Check if it is possible to read/write to postgres with from separate process.
 - Requires postgres with person table (e.g. running as docker container) accessed via [peewee](http:\\peewee) ORM
+
+Modifying this file is simple
