@@ -7,3 +7,4 @@ print(f'{a} and it is not easy {b["name"]}')
 # added comment
 print ('dpne')
 
+print ('another one')
