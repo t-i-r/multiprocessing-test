@@ -8,3 +8,5 @@ print(f'{a} and it is not easy {b["name"]}')
 print ('dpne')
 
 print ('another one')
+
+print ('yet another one')
