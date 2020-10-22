@@ -15,7 +15,6 @@ print ('yet another one')
 
 print ('comment in master2')
 print ('comment in test_pr')
-print ('comment in test_pr')
 
 # this is very different
 
